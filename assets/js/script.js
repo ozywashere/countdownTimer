@@ -49,15 +49,15 @@ function countdown() {
     }
 
     return item
-    }
-    
-    items.forEach(function (item, index) {
-      item.innerHTML = format(values[index])
-    })
-    if (t < 0) {
-      clearInterval(countdownInterval)
-    }
+  }
+
+  items.forEach(function (item, index) {
+    item.innerHTML = format(values[index])
+  })
+  if (t < 0) {
+    clearInterval(countdownInterval)
   }
 }
+
 let countdownInterval = setInterval(countdown, 1000)
 countdown()
