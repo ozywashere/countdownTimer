@@ -47,14 +47,17 @@ function countdown() {
     if (item < 10) {
       return (item = `0${item}`)
     }
+
     return item
+    }
+    
+    items.forEach(function (item, index) {
+      item.innerHTML = format(values[index])
+    })
+    if (t < 0) {
+      clearInterval(countdownInterval)
+    }
   }
-
-  items.forEach(function (item, index) {
-    item.innerHTML = format(values[index])
-  })
 }
-
 let countdownInterval = setInterval(countdown, 1000)
-
 countdown()
